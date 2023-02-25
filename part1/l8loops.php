@@ -1,7 +1,7 @@
 <?php
     // PHP Loops
     
-    // for, foreach, while, do while
+    // for, foreach, while, do...while
 
     $colorones = ["red", "green", "blue", "white", "black", "grey", "pink"]; // indexed array
 
@@ -62,6 +62,38 @@
 
         $x++;
     }
+
+    echo "<br/> <br/> <br/>";
+
+    // do...while loop
+    // do{
+    //     code to be executed
+    //     in or dec
+    // }while(condition is true)
+
+    /* The diff between while loop & do while loop */
+
+    // $y = false;
+
+    // while($y){
+    //     echo "This is $y";
+    // }
+
+    // do{
+    //     echo "This is $y";
+    // }while($y);
+
+    echo "<br/>";
+
+    $y = 0;
+
+    do{
+        // echo "This is indexed array or manual array by do...while loop = index key is ". $y ." and value is ". $colorones[$y] ."<br/>";
+
+        echo "This is indexed array or manual array by do...while loop = index key is ". $coloroneskey[$y] ." and value is ". $colorones[$coloroneskey[$y]] ."<br/>";
+
+        $y++;
+    }while($y < count($colorones));
  
     echo "<br/> <hr/> <br/>";
 
@@ -99,6 +131,15 @@
 
         $x++;
     }
+
+    echo "<br/> <br/> <br/>";
+
+    $y = 0;
+    do{
+        echo "This is associative array by do...while loop = index key is ". $postskey[$y] ." and value is ". $posts[$postskey[$y]] ."<br/>";
+
+        $y++;
+    }while($y < count($posts));
 
     echo "<br/> <hr/> <br/>";
 
@@ -166,4 +207,20 @@
 
         $x++;
     }
+
+    echo "<br/> <br/> <br/>";
+
+    $g = 0;
+
+    do{
+        $newkey = array_keys($employees[$g]);
+
+        $h = 0;
+        do{
+            echo "This is multidimensional array by do...while loop = key is ". $newkey[$h] ." and value is ". $employees[$g][$newkey[$h]] ."<br/>";
+            $h++;
+        }while($h < count($newkey));
+
+        $g++;
+    }while($g < count($employees));
 ?>
