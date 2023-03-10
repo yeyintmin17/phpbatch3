@@ -1,13 +1,6 @@
 <?php
-    $arr1 = [
-        "first" => "ye",
-        "middle" => "yint",
-        "last" => "min"
-    ];
+    date_default_timezone_set("Asia/Yangon");
 
-    $arr1["val1"] = 1;
-    $arr1["first"] = "si";
-
-    print_r($arr1, false);
-    echo count($arr1);
+    $date = getdate();
+    print_r($date["seconds"]);
 ?>

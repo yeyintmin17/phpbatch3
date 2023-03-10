@@ -66,14 +66,8 @@
     $date = date("j", $time);
     echo "This is format j = ". $date ."<br/>"; // 3 (date, no leading zero)
 
-    $date = date("n", $time);
-    echo "This is format n = ". $date ."<br/>"; // 3 (date, no leading zero)
-
     $date = date("d", $time);
     echo "This is format d = ". $date ."<br/>"; // 03 (date leading zero)
-
-    $date = date("m", $time);
-    echo "This is format m = ". $date ."<br/>"; // 03 (date, leading zero)
 
     echo "<br/> <br/>";
 
@@ -94,6 +88,16 @@
 
     $date = date("F", $time);
     echo "This is format F = ". $date ."<br/>"; // March
+
+    echo "<br/> <br/>";
+
+    /* Month Num */
+
+    $date = date("n", $time);
+    echo "This is format n = ". $date ."<br/>"; // 3 (date, no leading zero)
+
+    $date = date("m", $time);
+    echo "This is format m = ". $date ."<br/>"; // 03 (date, leading zero)
 
     echo "<br/> <br/>";
 
@@ -123,7 +127,7 @@
     echo "This is format G = ". $date ."<br/>"; // 20 (hour, 24 format, no leading zero)
 
     $date = date("h", $time);
-    echo "This is format h = ". $date ."<br/>"; // 8 (hour, 12 format, leading zero)
+    echo "This is format h = ". $date ."<br/>"; // 08 (hour, 12 format, leading zero)
 
     $date = date("H", $time);
     echo "This is format H = ". $date ."<br/>"; // 20 (hour, 24 format, leading zero)
@@ -133,14 +137,14 @@
     /* Minute */
 
     $date = date("i", $time);
-    echo "This is format i = ". $date ."<br/>"; // 15 (minute)
+    echo "This is format i = ". $date ."<br/>"; // 15 (minute, leading zeros)
 
     echo "<br/> <br/>";
 
     /* Second */
 
     $date = date("s", $time);
-    echo "This is format s = ". $date ."<br/>"; // 18 (second)
+    echo "This is format s = ". $date ."<br/>"; // 18 (second, leading zeros)
 
     echo "<br/> <br/>";
 
