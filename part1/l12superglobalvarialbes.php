@@ -45,4 +45,22 @@
 
     echo $_SERVER["SERVER_PORT"]; // 80
     echo "<hr/>";
+
+    echo $_SERVER["SERVER_PROTOCOL"]; // HTTP/1.1
+    echo "<hr/>";
+
+    echo $_SERVER["SERVER_SIGNATURE"]; // Apache/2.4.53 (Win64) OpenSSL/1.1.1n PHP/8.1.6 Server at localhost Port 80
+    echo "<hr/>";
+
+    echo $_SERVER["REQUEST_METHOD"]; // GET
+    echo "<hr/>";
+
+    echo $_SERVER["REMOTE_ADDR"]; // ::1 ( return the ip address from where the user is viewing )
+    echo "<hr/>";
+
+    echo $_SERVER["SCRIPT_FILENAME"]; // C:/xampp/htdocs/phpbatch3/part1/l12superglobalvarialbes.php
+    echo "<hr/>";
+
+    echo $_SERVER["SCRIPT_NAME"]; // /phpbatch3/part1/l12superglobalvarialbes.php
+    echo "<hr/>";
 ?>
