@@ -599,4 +599,157 @@
     echo "<pre>". print_r($males, "true") ."</pre>"; // aung aung susu yuyu nunu naungnaung
 
     echo "<hr/>";
+
+    // array_sum() Function
+    // array_sum(array)
+
+    echo "array_sum()";
+    echo "<br/> <br/>";
+
+    $nums = [10, 20, 30, 40, 50];
+    echo "<pre>". print_r(array_sum($nums), "true") ."</pre>"; // 150
+
+    $nums = [10, 20, 30, "40", -50];
+    echo "<pre>". print_r(array_sum($nums), "true") ."</pre>"; // 50
+
+    $nums = ["a" => 10.2, "b" => 20.3, "c" => 30.3];
+    echo "<pre>". print_r(array_sum($nums), "true") ."</pre>"; // 60.8
+
+    echo "<hr/>";
+
+    // array_unique() Function
+    // array_unique(array)
+
+    echo "array_unique()";
+    echo "<br/> <br/>";
+
+    $num = [10, 20, 30, 50, 10, 30, 60, 70, 80, 10];
+    echo "<pre>". print_r(array_unique($num), "true") ."</pre>"; // 10 20 30 50 60 70 80
+
+    $colors = array("a" => "red", "b" => "green", "c" => "blue", "d" => "red", "e" => "blue");
+    echo "<pre>". print_r(array_unique($colors), "true") ."</pre>"; // "a" => "red", "b" => "green", "c" => "blue"
+
+    echo "<hr/>";
+
+    // array_values() Function
+    // array_values(array)
+
+    echo "array_values()";
+    echo "<br/> <br/>";
+
+    $colors = array("a" => "red", "b" => "green", "c" => "blue", "d" => "red", "e" => "blue");
+    echo "<pre>". print_r(array_values($colors), "true") ."</pre>";
+
+    echo "<hr/>";
+
+    // array_walk() Function
+    // array_walk(array,callback fun, para)
+
+    echo "array_walk()";
+    echo "<br/> <br/>";
+
+    $colors = array("a" => "red", "b" => "green", "c" => "blue", "d" => "red", "e" => "blue");
+    
+    function myfunone($val, $key){
+        echo "Key is = $key and value is $val <br/>";
+    }
+
+    array_walk($colors, "myfunone");
+
+    echo "<br/><br/>";
+
+    $colors = array("a" => "red", "b" => "green", "c" => "blue", "d" => "red", "e" => "blue");
+
+    function myfuntwo($val, $key, $p){
+        echo "Key is = $key and value is $val $p <br/>";
+    }
+
+    array_walk($colors, "myfuntwo", "color");
+
+    echo "<br/><br/>";
+
+    $colors = array("a" => "red", "b" => "green", "c" => "blue", "d" => "red", "e" => "blue");
+
+    function myfunthree(&$val){
+        $val = "black";
+    }
+
+    array_walk($colors, "myfunthree");
+
+    echo "<pre>". print_r($colors, "true") ."</pre>";
+
+    echo "<hr/>";
+
+    // compact() Function
+    // compact(var1, var2, var3, ...)
+
+    echo "compact()";
+    echo "<br/> <br/>";
+
+    $name = "Aung";
+    $age = "25";
+    $city = "Yangon";
+
+    $result = compact("name", "age", "city");
+    echo "<pre>". print_r($result, "true") ."</pre>";
+
+    echo "<hr/>";
+
+    // current() / pos() / end() / next() / prev() / reset()
+
+    echo "current() / pos() / end() / next() / prev() / reset()";
+    echo "<br/> <br/>";
+
+    $students = array("aung aung", "maung maung", "zaw zaw", "tun tun", "kyaw kyaw");
+
+    // echo "<pre>". print_r(current($students), "true") ."</pre>"; // aung aung 
+    // echo "<pre>". print_r(pos($students), "true") ."</pre>"; // aung aung
+    // echo "<pre>". print_r(end($students), "true") ."</pre>"; // kyaw kyaw
+
+    // echo "<pre>". print_r(current($students), "true") ."</pre>"; // aung aung 
+    // echo "<pre>". print_r(next($students), "true") ."</pre>"; // maung maung 
+    // echo "<pre>". print_r(end($students), "true") ."</pre>"; // kyaw kyaw
+    // echo "<pre>". print_r(prev($students), "true") ."</pre>"; // tun tun
+
+    // echo "<pre>". print_r(current($students), "true") ."</pre>"; // aung aung 
+    // echo "<pre>". print_r(next($students), "true") ."</pre>"; // maung maung 
+    // echo "<pre>". print_r(prev($students), "true") ."</pre>"; // aung aung 
+    // echo "<pre>". print_r(next($students), "true") ."</pre>"; // maung maung 
+    // echo "<pre>". print_r(reset($students), "true") ."</pre>"; // aung aung 
+    // echo "<pre>". print_r(current($students), "true") ."</pre>"; // aung aung 
+
+    echo "<hr/>";
+
+    // range() Function
+    // range(low, high, step)
+
+    echo "range()";
+    echo "<br/> <br/>";
+
+    $num1 = range(0, 5);
+    echo "<pre>". print_r($num1, "true") ."</pre>"; // 0 to 5 by array
+
+    $num2 = range(0, 50, 10);
+    echo "<pre>". print_r($num2, "true") ."</pre>"; // 0 to 50 by array
+
+    $char= range("a", "k");
+    echo "<pre>". print_r($char, "true") ."</pre>"; // a to k by array
+
+    $char= range("k", "g");
+    echo "<pre>". print_r($char, "true") ."</pre>"; // k to g by array
+
+    echo "<hr/>";
+
+    // sizeof() Function
+    // sizeof(arary)
+
+    echo "sizeof()";
+    echo "<br/> <br/>";
+
+    $colors = ["red", "green", "blue", "pink"];
+    echo "<pre>". print_r(sizeof($colors), "true") ."</pre>"; // 4 by string (int)
+    
+    echo var_dump(sizeof($colors));
+
+    echo "<hr/>";
 ?>
