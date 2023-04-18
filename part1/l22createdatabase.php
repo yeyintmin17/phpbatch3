@@ -15,13 +15,13 @@
 
     $sql = "CREATE DATABASE IF NOT EXISTS phpdbone";
 
-    if(mysqli_query($conn, $sql)){ // true or false
+    if(mysqli_query($conn, $sql)){
         echo "Database Created Successfully";
     }else{
         echo "Error Found". mysqli_error($conn);
     }
 
-    mysqli_close($conn); // after ct db
+    mysqli_close($conn); 
     echo "<hr/>";
 
     // => MySQLi Object-Oriented

@@ -1,5 +1,5 @@
 <?php
-    // ini_set('display-errors', 1);
+    ini_set('display_errors', 1);
 
     // (i) MySQLi Procedural * normal
     // (ii) MySQLi Object-Oriented * normal
@@ -88,7 +88,7 @@
     $dbname = 'wdf6797';
 
     try{
-        // $conn = new PDO("mysqli:host=$dbhost", $dbuser, $dbpass);
+        // $conn = new PDO("mysql:host=$dbhost", $dbuser, $dbpass);
         $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
 
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
