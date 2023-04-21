@@ -72,4 +72,6 @@
     }catch(PDOException $e){
         echo "Error Found : ". $e->getMessage();
     }
+
+    $conn = null;
 ?>

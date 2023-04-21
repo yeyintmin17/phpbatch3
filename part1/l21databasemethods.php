@@ -97,5 +97,7 @@
         echo "Connect Failed : ". $e->getMessage();
     }
 
+    $conn = null;
+
     echo "<hr/>";
 ?>

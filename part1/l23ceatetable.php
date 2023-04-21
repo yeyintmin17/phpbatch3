@@ -95,5 +95,7 @@
         echo "Error Found : ". $e->getMessage();
     }
 
+    $conn = null;
+
     echo '<hr/>';
 ?>
