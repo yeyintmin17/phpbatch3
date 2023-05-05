@@ -233,4 +233,15 @@
     echo number_format(1000000, 6, "-", "&") ."<br/>"; // 1&000&000-000000
 
     echo "<hr/>";
+
+    // stripslashes() Function
+    // stripslashes(string)
+
+    $str = "he\'s my father";
+
+    echo $str;
+    echo "<br/>";
+    echo stripslashes($str);
+
+    echo "<hr/>";
 ?>
