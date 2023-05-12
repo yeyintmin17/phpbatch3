@@ -48,6 +48,8 @@
 
     echo "<hr/>";
 
+    # Decode By Single
+
     $students = '{ 
         "name": "aung aung", 
         "age": 25, 
@@ -58,5 +60,34 @@
     var_dump($studentsde);
     echo "<pre>". print_r($studentsde, true) ."<pre>";
 
+    // can't print
+    // echo $studentsde["name"] ."<br/>";
+    // echo $studentsde["age"] ."<br/>";
+    // echo $studentsde["city"] ."<br/>";
+
+    // can print ( -> object operator )
+    echo $studentsde->name ."<br/>";
+    echo $studentsde->age ."<br/>";
+    echo $studentsde->city ."<br/>";
+
+    foreach($studentsde as $key => $value){
+        echo $key ." is ". $value ."<br/>";
+    }
+
     echo "<hr/>";
+
+    # Decode By Multi
+
+    $studentsde = json_decode($students, true);
+    var_dump($studentsde);
+    echo "<pre>". print_r($studentsde, true) ."<pre>";
+
+    echo $studentsde["name"] ."<br/>";
+    echo $studentsde["age"] ."<br/>";
+    echo $studentsde["city"] ."<br/>";
+
+    // can't print
+    // echo $studentsde->name ."<br/>";
+    // echo $studentsde->age ."<br/>";
+    // echo $studentsde->city ."<br/>";
 ?>
