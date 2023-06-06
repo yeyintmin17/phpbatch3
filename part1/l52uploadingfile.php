@@ -9,24 +9,178 @@
         // echo $result;
         // echo "<pre>". print_r($result, true) ."</pre>";
 
-        function getfilesize($filesize){
-           if(is_numeric($filesize)){
-                $idx = 0;
-                $prefix = ["Bit", "Kb", "Mb", "Gb", "Tb", "Pb", "Eb", "Zb", "Yb"];
-                $fixnum = 1024;
+        // function getfilesize($filesize){
+        //    if(is_numeric($filesize)){
+        //         $idx = 0;
+        //         $prefix = ["B", "Kb", "Mb", "Gb", "Tb", "Pb", "Eb", "Zb", "Yb"];
+        //         $fixnum = 1024;
                 
-                while(($filesize / $fixnum) > 0.9){
-                    $filesize = $filesize / $fixnum;
-                    $idx++;
-                }
+        //         while(($filesize / $fixnum) > 0.9){
+        //             $filesize = $filesize / $fixnum;
+        //             $idx++;
+        //         }
     
-                return round($filesize, 2) .$prefix[$idx];
-            }else{
-                return "NaN";
+        //         return round($filesize, 2) .$prefix[$idx];
+        //     }else{
+        //         return "NaN";
+        //     }
+        // }
+    
+        // echo getfilesize($_FILES['profile']['size']) ."<br/>";
+
+        // function getfilesizetwo($filesize){
+        //     $idx = 0;
+        //     $prefix = ["B", "Kb", "Mb", "Gb", "Tb", "Pb", "Eb", "Zb", "Yb"];
+        //     $fixnum = 1024;
+
+        //    if($filesize < $fixnum){
+        //         return $filesize .' '. $prefix[$idx];
+        //     }else{
+        //         while($filesize > $fixnum){
+        //             $filesize = round($filesize / $fixnum, 2);
+        //             $idx++;
+        //         }
+    
+        //         return $filesize .$prefix[$idx];
+        //     }
+        // }
+    
+        // echo getfilesizetwo($_FILES['profile']['size']) ."<br/>";
+
+        // function getfilesizethree($filesize){
+        //     $size = filesize($filesize);
+        //     $prefix = ["B", "Kb", "Mb", "Gb", "Tb", "Pb", "Eb", "Zb", "Yb"];
+        //     $fixnum = 1024;
+
+        //    // echo $size ."<br/>";
+
+        //     $power = $size > 0 ? floor(log($size, $fixnum)) : 0;
+
+        //     // $result = $size / pow($fixnum, $power) .$prefix[$power];
+        //     $result = round($size / pow($fixnum, $power), 2) .$prefix[$power];
+        //     return $result;
+        // }
+    
+        // echo getfilesizethree($_FILES["profile"]["tmp_name"]) ."<br/>";
+
+        // $uploaddir = "assets/";
+        // $uploadfile = $uploaddir .basename($_FILES['profile']['name']);
+
+        // if(move_uploaded_file($_FILES['profile']['tmp_name'], $uploadfile)){
+        //     echo "FIle Successfully Uploaded <br/>";
+        // }else{
+        //     echo "Try Again <br/>";
+        // }
+
+        // $uploaddir = "assets/";
+        // $uploadfile = $uploaddir .basename($_FILES['profile']['name']);
+        // $uploadsize = $_FILES['profile']['size'];
+
+        // if($uploadsize > 30000){
+        //     echo "Sorry, Your file is too large";
+        // }else{
+        //     if(file_exists($uploadfile)){
+        //         echo "Sorry, File already exists <br/>";
+        //     }else{
+        //         if(move_uploaded_file($_FILES['profile']['tmp_name'], $uploadfile)){
+        //             echo "FIle Successfully Uploaded <br/>";
+        //         }else{
+        //             echo "Try Again <br/>";
+        //         }
+        //     }
+        // }
+
+        // $uploaddir = "assets/";
+        // $uploadfile = $uploaddir .basename($_FILES['profile']['name']);
+        // $uploadsize = $_FILES['profile']['size'];
+        // $uploadtype = strtolower(pathinfo($uploadfile, PATHINFO_EXTENSION));
+
+        // if($uploadtype !== "jpg" && $uploadtype !== "jpeg" && $uploadtype !== "png" && $uploadtype !== "gif"){
+        //     echo "Sorry, We just allowed for JPG, JPEG, PNG & GIF file types <br/>";
+        // }else{
+        //     if($uploadsize > 30000){
+        //         echo "Sorry, Your file is too large";
+        //     }else{
+        //         if(file_exists($uploadfile)){
+        //             echo "Sorry, File already exists <br/>";
+        //         }else{
+        //             if(move_uploaded_file($_FILES['profile']['tmp_name'], $uploadfile)){
+        //                 echo "FIle Successfully Uploaded <br/>";
+        //             }else{
+        //                 echo "Try Again <br/>";
+        //             }
+        //         }
+        //     }
+        // }
+
+        // $uploaddir = "assets/";
+        // $uploadfile = $uploaddir .basename($_FILES['profile']['name']);
+        // $uploadsize = $_FILES['profile']['size'];
+        // $uploadtype = strtolower(pathinfo($uploadfile, PATHINFO_EXTENSION));
+        // $uploadready = true;
+
+        // // check file already exists or not
+        // if(file_exists($uploadfile)){
+        //     echo "Sorry, file already exists. <br/>";
+        //     $uploadready = false;
+        // }
+
+        // // check file size
+        // if($_FILES["profile"]["size"] > 30000){
+        //     echo "Sorry, your file is too large <br/>";
+        //     $uploadready = false;
+        // }
+
+        // // check file format
+        // if($uploadtype !== "jpg" && $uploadtype !== "jpeg" && $uploadtype !== "png" && $uploadtype !== "gif"){
+        //     echo "Sorry, We just allowed for JPG, JPEG, PNG & GIF file types <br/>";
+        //     $uploadready = false;
+        // }
+
+        // // upload
+        // if($uploadready){
+        //     if(move_uploaded_file($_FILES['profile']['tmp_name'], $uploadfile)){
+        //         echo "Uploaded successfully <br/>";
+        //     }else{
+        //         echo "Uploading Failed <br/>";
+        //     }
+        // }else{
+        //     echo "Sorry, your file was not uploaded <br/>";
+        // }
+
+        if(!empty($_FILES["profile"]["name"])){
+            $filename = $_FILES["profile"]["name"];
+            $filesize = $_FILES["profile"]["size"];
+            $filetmp = $_FILES["profile"]["tmp_name"];
+
+            $uploaddir = "assets/";
+            $uploadfile = $uploaddir .basename($_FILES['profile']['name']);
+            $uploadtype = strtolower(end(explode(".", $filename)));
+
+            $allowextensions = ["jpg", "jpeg", "png", "gif"];
+
+            if(isset($_FILES["profile"])){
+                $errors = [];
+
+                // check extension
+                if(in_array($uploadtype, $allowextensions)){
+                    $erros[] = "Sorry, We just allowed for JPG, JPEG, PNG & GIF file types";
+                }
+                
+                // check size
+                if($filesize > 30000){
+                    $erros[] = "Sorry, your file is too large";
+                }
+
+                // upload
+                if(empty($errors) === true){
+                    move_uploaded_file($filetmp, $uploadfile);
+                    echo "File uploaded successfully <br/>";
+                }else{
+                    echo "<pre>". print_r($errors, true) ."</pre>";
+                }
             }
         }
-    
-        echo getfilesize($_FILES['profile']['size']) ."<br/>";
     }
 
     // file size in php, will show byte
@@ -67,4 +221,13 @@ peta byte
 exa byte
 zetta byte
 yotta byte
+-->
+
+<!--
+1MB = 1024KB instead of 1000KB
+01 base 2
+
+2^0 = 1
+2^2 = 4
+2^10 = 1024
 -->

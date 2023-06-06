@@ -232,6 +232,12 @@
     echo number_format("1000000") ."<br/>"; // 1,000,000
     echo number_format(1000000, 6, "-", "&") ."<br/>"; // 1&000&000-000000
 
+    echo number_format(1500, 2) ."<br/>"; //  1,500.00
+    echo number_format(1250000, 2) ."<br/>"; // 1,250,000.00
+    echo number_format(1250000, 2, ".", ",") ."<br/>"; // 1,250,000.00
+    echo number_format(1250000, 2, ",", ".") ."<br/>"; // 1.250.000,00
+    echo number_format(1250000, 2, ".", "-") ."<br/>"; // 1-250-000.00
+
     echo "<hr/>";
 
     // stripslashes() Function
@@ -242,6 +248,32 @@
     echo $str;
     echo "<br/>";
     echo stripslashes($str);
+
+    echo "<hr/>";
+
+    // basename() Function
+    // basename(string, delete string)
+
+    $path = "./asssets/img/cover.jpg";
+
+    echo $path ."<br/>";
+    echo basename($path) ."<br/>";
+    echo basename($path, "ver.jpg") ."<br/>";
+    echo basename($path, " ver.jpg") ."<br/>";
+
+    echo "<hr/>";
+
+    // pathinfo() Function
+    // pathinfo(string, keyword)
+
+    $filepath = "./asssets/img/user/cover.jpg";
+
+    echo $filepath ."<br/>";
+    echo "<pre>". print_r(pathinfo($filepath), true) ."</pre>";
+    echo pathinfo($filepath, PATHINFO_DIRNAME) ."<br/>";
+    echo pathinfo($filepath, PATHINFO_BASENAME) ."<br/>";
+    echo pathinfo($filepath, PATHINFO_EXTENSION) ."<br/>";
+    echo pathinfo($filepath, PATHINFO_FILENAME) ."<br/>";
 
     echo "<hr/>";
 ?>

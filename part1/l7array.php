@@ -123,4 +123,40 @@
     echo "<br/>";
 
     echo "<br/> <hr/> <br/>";
+
+    // ---------------------------------------------------
+
+    $myarr = ["red", "green", "blue", "white", "black"];
+    $myarr[5] = "violet";
+    $myarr[6] = "pink";
+    $myarr[0] = "steelblue";
+    $myarr[9] = "gray";
+
+    echo "<pre>". print_r($myarr, true) ."</pre>";
+
+    $myarrs = [];
+    $myarrs[] = "red";
+    $myarrs[] = "green";
+    $myarrs[] = "blue";
+
+    echo "<pre>". print_r($myarrs, true) ."</pre>";
+
+    echo "<br/> <hr/> <br/>";
+
+    // ---------------------------------------------------
+
+    # in_array(search_value, array) Function
+
+    $myarrnums = [10, 50, "60", 90, 80, "71", 3, 6, "8", 500];
+
+    echo in_array(60, $myarrnums) ."<br/>";
+    if(in_array("60", $myarrnums)){
+        echo "Match found <br/>";
+    }else{
+        echo "Match not found <br/>";
+    }
+
+    echo "<br/> <hr/> <br/>";
+
+    // ---------------------------------------------------
 ?>

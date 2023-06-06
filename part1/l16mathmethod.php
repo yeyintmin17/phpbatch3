@@ -83,6 +83,18 @@
 
     echo "<hr/>";
 
+    // log() Function
+    // log(number, base)
+
+    echo "log(x, y) <br/><br/>";
+
+    echo log(10, 2) ."<br/>"; // 3.3219280948874
+    echo log(20, 2) ."<br/>"; // 4.3219280948874
+    echo log(80, 3) ."<br/>"; // 3.9886925350038
+    echo log(8, 3) ."<br/>"; // 1.8927892607144
+    
+    echo "<hr/>";
+
     // sqrt() Function
     // sqrt(num)
 
@@ -99,7 +111,7 @@
     // rand() Function
     // rand() or rand(min, max)
 
-    echo "sqrt(num) <br/><br/>";
+    echo "rand(num) <br/><br/>";
 
     echo rand() ."<br/>";
     echo rand() ."<br/>";
